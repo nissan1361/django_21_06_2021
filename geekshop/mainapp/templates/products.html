@@ -27,14 +27,27 @@
 		<div class="details">
 			<div class="links clearfix">
 				<ul class="links-menu">
-					<li><a href="#" class="active">все</a></li>
-					<li><a href="#">дом</a></li>
-					<li><a href="#">офис</a></li>
-					<li><a href="#">модерн</a></li>
-					<li><a href="#">классика</a></li>
+					<li>
+            <a href="{% url 'products:category' 0 %}"
+               class="{% if request.resolver_match.kwargs.pk == 0 %}
+                        active
+                      {% endif %}">
+              все
+            </a>
+          </li>
+          {% for link in links_menu %}
+            <li>
+              <a href="{% url 'products:category' link.pk %}"
+                 class="{% if request.resolver_match.kwargs.pk|add:0 == link.pk %}
+                          active
+                        {% endif %}">
+                {{ link.name }}
+              </a>
+            </li>
+          {% endfor %}
 				</ul>
 			</div>
-
+<!--
 			<div class="details-products">
 				<div class="details-slider">
 					<div class="slider-product">
@@ -76,6 +89,34 @@
 					</div>
 				</div>
 			</div>
+-->
+
+
+			<div class="featured">
+				<h2>
+					Категория: "{{ category.name|title }}"
+				</h2>
+			<div class="featured-menu">
+					<a class="active" href="#">Популярные</a><a href="#">Новинки</a>
+			</div>
+			<a class="explore" href="#">показать все <img src="/static/geekshop/img/arrow.png" alt=""></a>
+			<div class="clearfix">
+			</div>
+			<div class="tab-content">
+
+				{% for product in products %}
+					<div class="block">
+						<a href="{% url 'basket:add' product.pk %}"><img src="/media/{{product.image}}" alt="">
+							<div class="text">
+								<img src="{% static 'geekshop/img/icon-hover.png' %}" alt="">
+								<h4>{{product.name}}</h4>
+								<p>{{product.short_desc}}</p>
+							</div>
+						</a>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
 
 			<div class="related">
 				<div class="title clearfix">
