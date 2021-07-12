@@ -7,6 +7,7 @@ class ProductCategory(models.Model):
 
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+    is_delited = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name or f"Category with id {self.pk}"
@@ -61,6 +62,7 @@ class Product(models.Model):
     updated = models.DateTimeField(
         auto_now=True,
     )
+    is_delited = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name or f"Product with id {self.pk}"

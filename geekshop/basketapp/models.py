@@ -19,6 +19,8 @@ class Basket(models.Model):
 
     add_datetime = models.DateTimeField(verbose_name='время', auto_now_add=True)
 
+    is_delited = models.BooleanField(default=False)
+
     @property
     def product_cost(self):
         return self.product.price * self.quantity
