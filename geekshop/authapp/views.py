@@ -1,4 +1,5 @@
 from django.core.mail import send_mail
+from django.db import transaction
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.contrib import auth
@@ -43,7 +44,7 @@ def login(request):
 
         user = auth.authenticate(username=username, password=password)
         if user and user.is_active:
-            auth.login(request, user)
+            auth.login(request, user, backend='django.contrib.auth.backends.ModelBackend')
             if 'next' in request.POST.keys():
                 return HttpResponseRedirect(request.POST['next'])
             else:
@@ -85,6 +86,7 @@ def register(request):
     return render(request, 'authapp/register.html', context)
 
 
+@transaction.atomic
 def edit(request):
     title = 'редактирование'
 
