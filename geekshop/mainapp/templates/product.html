@@ -1,0 +1,91 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Каталог</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'geekshop/style.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'mainapp/style.css' %}">
+	<link rel="stylesheet" href="{% static 'geekshop/fonts/font-awesome/css/font-awesome.css' %}">
+
+</head>
+<body>
+	<div class="container">
+		<div class="hero-white">
+			<div class="header clearfix">
+				<a href="{% url 'index' %}" class="logo"></a>
+				<ul class="menu">
+					<li><a href="{% url 'index' %}" class="active">домой</a></li>
+					<li><a href="{% url 'products:index' %}">продукты</a></li>
+					<li><a href="{% url 'contacts' %}">контакты</a></li>
+				</ul>
+				<a href="#" class="search"></a>
+                <a href="#" class="basket"></a>
+			</div>
+		</div>
+
+		<div class="details">
+			<div class="links clearfix">
+				<ul class="links-menu">
+					<li>
+            <a href="{% url 'products:category' 0 %}"
+               class="{% if request.resolver_match.kwargs.pk == 0 %}
+                        active
+                      {% endif %}">
+              все
+            </a>
+          </li>
+          {% for link in links_menu %}
+            <li>
+              <a href="{% url 'products:category' link.pk %}"
+                 class="{% if request.resolver_match.kwargs.pk|add:0 == link.pk %}
+                          active
+                        {% endif %}">
+                {{ link.name }}
+              </a>
+            </li>
+          {% endfor %}
+				</ul>
+			</div>
+
+			<div class="details-products">
+				<div class="details-slider">
+					<div class="slider-product">
+						<img src="/media/{{product.image}}">
+					</div>
+					<div class="slider-control">
+						<div class="block">
+							<a href="#"><img src="/media/{{product.image}}" alt="">
+								<div class="text"></div>
+							</a>
+						</div>
+						<div class="block">
+							<a href="#"><img src="/media/{{product.image}}" alt="">
+								<div class="text"></div>
+							</a>
+						</div>
+						<div class="block">
+							<a href="#"><img src="/media/{{product.image}}" alt="">
+								<div class="text"></div>
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="description">
+					<h3 class="big-bold">{{product.name}}</h3>
+					<h3 class="red">горячее предложение</h3>
+					<p class="price"> {{product.price}} <span>руб</span></p>
+					<a href="#" class="red-button">
+						заказать <i class="fa fa-chevron-right" aria-hidden="true"></i>
+					</a>
+					<div class="description-text">
+						{{product.description}}
+					</div>
+				</div>
+			</div>
+
+
+</body>
+</html>

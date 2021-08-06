@@ -1,0 +1,113 @@
+[
+  {
+
+      "category": "Дом",
+      "name": "Белый стул",
+      "image": "product_images/product-21.jpg",
+      "short_desc": "",
+      "description": "",
+      "price": "4000.00",
+      "quantity": 2
+  },
+  {
+      "category": "Офис",
+      "name": "Стул Босса",
+      "image": "product_images/product-2.jpg",
+      "short_desc": "",
+      "description": "",
+      "price": "10000.00",
+      "quantity": 1
+
+  },
+  {
+      "category": "Дом",
+      "name": "Винтажная кушетка",
+      "image": "product_images/product-3-sm.jpg",
+      "short_desc": "Ооолд",
+      "description": "",
+      "price": "25000.00",
+      "quantity": 2
+  },
+  {
+      "category": "Дом",
+      "name": "Стул Ленина",
+      "image": "product_images/product-4.jpg",
+      "short_desc": "На нём сидел Ленин",
+      "description": "",
+      "price": "80000.00",
+      "quantity": 1
+  },
+  {
+      "category": "Дом",
+      "name": "Apple",
+      "image": "product_images/AppleLogo_z6ViE0A.png",
+      "short_desc": "Надкусанное яблоко",
+      "description": "",
+      "price": "50000.00",
+      "quantity": 8
+  },
+  {
+      "category": "Офис",
+      "name": "Linux",
+      "image": "",
+      "short_desc": "Свободная ос",
+      "description": "",
+      "price": "0.00",
+      "quantity": 122
+  },
+
+  {
+      "category": "Дом",
+      "name": "Белый стул 22",
+      "image": "product_images/product-21.jpg",
+      "short_desc": "",
+      "description": "",
+      "price": "4500.50",
+      "quantity": 100
+  },
+  {
+      "category": "Офис",
+      "name": "Стул Носорога",
+      "image": "product_images/product-2.jpg",
+      "short_desc": "",
+      "description": "",
+      "price": "2000.00",
+      "quantity": 8
+  },
+  {
+      "category": "Дом",
+      "name": "Новая кушетка",
+      "image": "product_images/product-3-sm.jpg",
+      "short_desc": "New!",
+      "description": "",
+      "price": "250.00",
+      "quantity": 2
+  },
+  {
+      "category": "Дом",
+      "name": "Стул Сталина",
+      "image": "product_images/product-4.jpg",
+      "short_desc": "На нём сидел Сталин",
+      "description": "",
+      "price": "81000.00",
+      "quantity": 2
+  },
+  {
+      "category": "Дом",
+      "name": "Apple TV",
+      "image": "product_images/AppleLogo_z6ViE0A.png",
+      "short_desc": "Надкусанное яблоко",
+      "description": "",
+      "price": "5000.00",
+      "quantity": 8
+  },
+  {
+      "category": "Офис",
+      "name": "Mac os",
+      "image": "",
+      "short_desc": "OS",
+      "description": "",
+      "price": "50.00",
+      "quantity": 122
+  }
+]
